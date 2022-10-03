@@ -39,6 +39,15 @@ namespace EntityFrameworkProjectLogic
             //Method Syntax
             //return context.Customers.Where(c => c.Region == "WA");
         }
+        public IQueryable<Customers> GetTop3InRegionWA()
+        {
+            var query = (from customers in context.Customers
+                        where customers.Region == "WA"
+                        select customers).Take(3);
+            return query;
+            //Method Syntax
+            //return context.Customers.Where(c => c.Region == "WA").Take(3);
+        }
 
         public IQueryable<Customers> CustomerAndOrders()
         {
@@ -52,6 +61,17 @@ namespace EntityFrameworkProjectLogic
             return query;
             //Method Syntax
             //return context.Customers.Where(c => c.Region == "WA");
+        }
+
+        public IQueryable<Customers> CustomerAsociatedToOrders()
+        {
+            var query = from customers in context.Customers
+                        join orders in context.Orders
+                        on new { customers.CustomerID }
+                        equals new { orders.CustomerID }
+                        select customers;
+
+            return query;
         }
 
         public void Delete(int id)

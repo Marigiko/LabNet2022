@@ -30,7 +30,13 @@ namespace EntityFrameworkProject
             IQueryable<Products> productsWithoutLinq = productsLogic.GetAllWithoutStock();
             IQueryable<Products> productsWithLinq = productsLogic.GetAllWithtStock();
             IQueryable<Products> productsFirst789Linq = productsLogic.GetFirst789();
+            IQueryable<Products> productsFirstElementLinq = productsLogic.GetFirstElement();
+            IQueryable<Products> productsOrderedByNameLinq = productsLogic.GetAllOrderByName();
+            IQueryable<Products> productsOrderByUnitInStockLinq = productsLogic.GetAllOrderByUnitInStock();
+            IQueryable<IGrouping<Categories, Products>> productsDistinctCategoriesLinq = productsLogic.GetDistinctCategories();
             IQueryable<Customers> customerAndOrdersLinq = customersLogic.CustomerAndOrders();
+            IQueryable<Customers> customerTop3InRegionWALinq = customersLogic.GetTop3InRegionWA();
+            IQueryable<Customers> customerAsociatedToOrdersLinq = customersLogic.CustomerAsociatedToOrders();
 
             Console.WriteLine("Query para devolver objeto customer\n\n");
             foreach (Customers customer in customerLinq)
@@ -83,6 +89,51 @@ namespace EntityFrameworkProject
             {
                 Console.WriteLine($"ESTOS SON LOS CUSTOMERS QUE SON DE WA Y SU ORDEN ES MAYOR A 1/1/1997: {customer.ContactName}");
             }
+            clearConsole();
+
+            Console.WriteLine("Query para devolver los primeros 3 Customers de la Región WA\n\n");
+            foreach (Customers customer in customerTop3InRegionWALinq)
+            {
+                Console.WriteLine($"ESTOS SON LOS 3 PRIMEROS CUSTOMERS DE WA: {customer.ContactName}");
+            }
+            clearConsole();
+
+            Console.WriteLine("Query para devolver lista de productos ordenados por nombre\n\n");
+            foreach (Products product in productsOrderedByNameLinq)
+            {
+                Console.WriteLine($"ESTE ES EL NOMBRE DEL PRODUCTO: {product.ProductName}");
+            }
+            clearConsole();
+
+            Console.WriteLine("Query para devolver lista de productos ordenados por unit in stock de mayor a menor\n\n");
+            foreach (Products product in productsOrderByUnitInStockLinq)
+            {
+                Console.WriteLine($"ESTE ES EL NOMBRE DEL PRODUCTO: {product.ProductName}" +
+                    $"Y ESTE ES EL PRECIO UNITARIO: {product.UnitPrice}");
+            }
+            clearConsole();
+
+            Console.WriteLine("Query para devolver las distintas categorías asociadas a los productos\n\n");
+            foreach (Products product in productsDistinctCategoriesLinq)
+            {
+                Console.WriteLine($"ESTOS SON LOS PRODUCTOS CON DISTINTAS CATEGORIAS: {product.ProductName} " +
+                    $"Y ESTAS SON SUS CATEGORIAS: {product.Categories}");
+            }
+            clearConsole();
+
+            Console.WriteLine("Query para devolver el primer elemento de una lista de productos\n\n");
+            foreach (Products product in productsFirstElementLinq)
+            {
+                Console.WriteLine($"ESTE ES EL PRIMER ELEMENTO DE LA LISTA: {product.ProductName}");
+            }
+            clearConsole();
+
+            Console.WriteLine("Query para devolver los customer con la cantidad de ordenes asociadas\n\n");
+            foreach (Customers customer in customerAsociatedToOrdersLinq)
+            {
+                Console.WriteLine($"ESTOS SON LOS CUSTOMERS ASOCIADOS CON LAS ORDENES: {customer.ContactName}");
+            }
+
             Console.WriteLine("\n\nFINAL DE LA DEMO");
 
             Console.ReadLine();
