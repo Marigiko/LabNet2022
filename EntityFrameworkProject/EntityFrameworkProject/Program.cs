@@ -112,7 +112,8 @@ namespace EntityFrameworkProject
                     $"Y ESTE ES EL PRECIO UNITARIO: {product.UnitPrice}");
             }
             clearConsole();
-
+            /*
+             * NO SUPE COMO RESOLVER EL TIPO IGrouping<Categories,Products>
             Console.WriteLine("Query para devolver las distintas categorías asociadas a los productos\n\n");
             foreach (Products product in productsDistinctCategoriesLinq)
             {
@@ -120,7 +121,7 @@ namespace EntityFrameworkProject
                     $"Y ESTAS SON SUS CATEGORIAS: {product.Categories}");
             }
             clearConsole();
-
+            */
             Console.WriteLine("Query para devolver el primer elemento de una lista de productos\n\n");
             foreach (Products product in productsFirstElementLinq)
             {
