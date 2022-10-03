@@ -1,5 +1,4 @@
-﻿using EntityFrameworkProjectData;
-using EntityFrameworkProjectEntities;
+﻿using EntityFrameworkProjectEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +13,45 @@ namespace EntityFrameworkProjectLogic
         {
             context.Customers.Add(campo);
             context.SaveChanges();
+        }
+        public IQueryable<Customers> Get()
+        {
+            var query = from customers in context.Customers
+                        select customers;
+            return query;
+            //Method Syntax
+            //return context.Customers;
+        }
+        public List<String> GetNames()
+        {
+            var query = from customers in context.Customers
+                        select customers.ContactName;
+            return query.ToList();
+            //Method Syntax
+            //return context.Customers.ToList();
+        }
+        public IQueryable<Customers> GetAllInRegionWA()
+        {
+            var query = from customers in context.Customers
+                        where customers.Region == "WA"
+                        select customers;
+            return query;
+            //Method Syntax
+            //return context.Customers.Where(c => c.Region == "WA");
+        }
+
+        public IQueryable<Customers> CustomerAndOrders()
+        {
+            var query = from customers in context.Customers
+                        join orders in context.Orders
+                        on new { customers.CustomerID }
+                        equals new { orders.CustomerID }
+                        where customers.Region == "WA" && orders.OrderDate > new DateTime(1997, 1, 1)
+                        select customers;
+
+            return query;
+            //Method Syntax
+            //return context.Customers.Where(c => c.Region == "WA");
         }
 
         public void Delete(int id)
