@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Page Layout</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Jquery Files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<!-- Bootstrap Files -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="style.css">
+    
+    <!-- Jquery -->
+    <script>
+        $(document).ready(function(){
+            $(".iName").change(function(){
+                if($(".iName").val() == "") {
+                    $(".lName").css("color","red")
+                }else {
+                    $(".lName").css("color","blue")
+                }
+            });
+            
+            $(".iLastName").change(function(){
+                if($(".iLastName").val() == "") {
+                    $(".lLastName").css("color","red")
+                }else {
+                    $(".lLastName").css("color","blue")
+                }
+            });
+            
+            $("#form").on("submit",function(){
+                if($(".iName").val() != "" && $(".iLastName").val() != "") {
+                    $("#form").submit();
+                    return true;
+                } else {
+                    alert("Campo Nombre o Apellido estan vacios");
+                    $(".lLastName").css("color","red");
+                    $(".lName").css("color","red");
+                    return false;
+                }
+            })
+            
+            $("#clear").click(function(){
+                $("#form")[0].reset();
+            })
+        });
+    </script>
+
+</head>
+<body>
+	<main id="main">
+		<section>
+			<form action="" id="form" style="width: 300px">
+				<article class="pInfo">
+                    <label id="pLabel">Información personal</label>
+                    <label class="lName">Nombre:</label>
+                    <input type="text" class="iName">
+                    <label class="lLastName">Apellido:</label>
+                    <input type="text" class="iLastName">
+                    <label>Edad:</label>
+                    <input type="text" class="edad">
+                    <ul class="genero" style="list-style-type: none;">
+                        <li>
+                    <input type="radio" class="iRadio" value="Masculino" name="Genero" checked="checked" />
+                    <label>Masculino</label>
+                        </li>
+                        <li>
+                    <input type="radio" class="iRadio" name="Genero" value="Femenino" />
+                    <label>Femenino</label>
+                        </li>
+                        <li>
+                    <input type="radio" class="iRadio" name="Genero" value="Otro" />
+                    <label>Otro</label>
+                        </li>
+                    </ul>
+				</article>
+				<article class="aInfo">
+                    <label id="aLabel">Información adicional</label>
+                    <label>Empresa:</label>
+                    <input type="text">
+				</article>
+                <div class="botones">
+				    <button id="button">
+					   Submit
+				    </button>
+                    <input id="clear" type="button" value="Clear" />
+                </div>
+			</form>
+		</section>
+	</main>
+    <style type="text/css">
+        .edad {
+            width: 100px;
+        }
+        button{
+            width: 30%;
+            align-self: center;
+        }
+    </style>
+	<!-- Bootstrap Files -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

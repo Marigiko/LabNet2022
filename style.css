@@ -1,0 +1,64 @@
+.pInfo{
+    display: inline-flex;
+    flex-direction: column;
+    border-style: groove;
+    border: 1px,1px;
+}
+.aInfo{
+    display: inline-flex;
+    flex-direction: column;
+    margin-top: 15px;
+    border-style: groove;
+    border: 1px,1px;
+}
+form{
+    display: inline-flex;
+    flex-direction: column;
+}
+#pLabel{
+    position: relative;
+    background-color: gainsboro;
+    width: 160px;
+    top: -15px;
+    left: 10px;
+}
+#aLabel{
+    position: relative;
+    background-color: gainsboro;
+    width: 160px;
+    top: -15px;
+    left: 10px;
+}
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+body{
+    padding-top: 100px;
+    background-color: gainsboro;
+}
+input{
+    width: 85%;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.iRadio{
+    width: 5%;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.botones{
+    display: flex;
+    justify-content: space-around;
+}
+#clear{
+    width: 30%;
+    margin-left: 0px;
+    margin-bottom: 0px;
+}
+.genero{
+    padding-left: 0;
+    margin-bottom: 0;
+}
