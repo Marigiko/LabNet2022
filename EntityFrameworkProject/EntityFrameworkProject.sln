@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkProjectEntit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkProjectData", "EntityFrameworkProjectData\EntityFrameworkProjectData.csproj", "{9C33A26C-FF6C-499F-98EA-42B67FA63A97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkMVC", "EntityFrameworkMVC\EntityFrameworkMVC.csproj", "{F1966CD6-C7C9-47AB-B16D-B745371225B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9C33A26C-FF6C-499F-98EA-42B67FA63A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C33A26C-FF6C-499F-98EA-42B67FA63A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C33A26C-FF6C-499F-98EA-42B67FA63A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

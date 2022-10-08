@@ -1,0 +1,56 @@
+﻿@model List<EntityFrameworkMVC.Models.CategoryView>
+
+@{
+    ViewBag.Title = "Categories Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Categories</title>
+</head>
+<body>
+    <table class="table-responsive table-dark>
+        <thead>
+            <tr>
+                <th scope="auto>
+                    #
+                </th>
+                <th scope="col">
+                    CATEGORIA
+                </th>
+                <th scope="col">
+                    NOMBRE DEL PRODUCTO
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <th>
+                        @category.name
+                    </th>
+                    @foreach (var product in category.products)
+                    {
+                        <td>@product.ProductName</td>
+
+                    }
+                    <td>
+                        @Html.ActionLink("Borrar", "Delete", new { id = category.id })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    <br/>
+    <br/>
+    @using (Html.BeginForm("Insert", "Category", FormMethod.Post))
+            {
+                <label>Nombre del Producto: </label> @Html.TextBoxFor(c => c.First().name)
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            }
+</body>
+</html>
