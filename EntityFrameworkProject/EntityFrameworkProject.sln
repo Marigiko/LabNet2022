@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkProjectData"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkMVC", "EntityFrameworkMVC\EntityFrameworkMVC.csproj", "{F1966CD6-C7C9-47AB-B16D-B745371225B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkWebRestAPI", "EntityFrameworkWebRestAPI\EntityFrameworkWebRestAPI.csproj", "{749E704A-EA82-4CF0-A0C8-CB8948247BF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1966CD6-C7C9-47AB-B16D-B745371225B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{749E704A-EA82-4CF0-A0C8-CB8948247BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{749E704A-EA82-4CF0-A0C8-CB8948247BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{749E704A-EA82-4CF0-A0C8-CB8948247BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{749E704A-EA82-4CF0-A0C8-CB8948247BF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
